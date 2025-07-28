@@ -1,5 +1,6 @@
 import java.io.IOException;
 import java.net.ServerSocket;
+import java.net.Socket;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -12,7 +13,12 @@ public class ChatServer {
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             System.out.println("Server Started on port " + PORT);
 
-            while ()
+            while (true) {
+                Socket clientSocket = serverSocket.accept();
+                System.out.println("New Client Connected");
+
+                ClientHandler clientHandler = new ClientHandler()
+            }
         }
     }
 }
